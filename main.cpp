@@ -11,7 +11,7 @@ int main() {
 	cout << "지뢰찾기 게임" << endl;
 
 	while (1) {
-		cout << "레벨을 선택하세요: ";
+		cout << "난이도를 선택하세요(1.하 2.중 3.상): ";
 		cin >> level;
 
 		if (level == 1 || level == 2 || level == 3) {
@@ -71,7 +71,7 @@ int main() {
 
 		}
 		else {
-			cout << "레벨을 다시 입력하세요." << endl;
+			cout << "난이도를 1~3 사이 정수로 다시 입력하세요." << endl;
 			continue;
 		}
 	}
