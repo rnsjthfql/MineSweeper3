@@ -146,19 +146,23 @@ void MineControl::DFSMap(int x, int y, Map1& map1, Map2& map2)
 {
 	if (x-1 >= 0 && map1[x - 1][y] != 9 && map2[x-1][y] == 0) {
 		map2[x - 1][y] = 1;
-		DFSMap(x - 1, y, map1, map2);
+		if(map1[x-1][y] == 0)
+			DFSMap(x - 1, y, map1, map2);
 	}
 	if (x+1 <= map1.GetRow()-1 && map1[x + 1][y] != 9 && map2[x+1][y] == 0) {
 		map2[x + 1][y] = 1;
-		DFSMap(x + 1, y, map1, map2);
+		if(map1[x+1][y] == 0)
+			DFSMap(x + 1, y, map1, map2);
 	}
 	if (y-1 >= 0 && map1[x][y - 1] != 9 && map2[x][y-1] == 0) {
 		map2[x][y - 1] = 1;
-		DFSMap(x, y - 1, map1, map2);
+		if(map1[x][y-1] == 0)
+			DFSMap(x, y - 1, map1, map2);
 	}
 	if (y+1 <= map1.GetCol()-1 && map1[x][y + 1] != 9 && map2[x][y+1] == 0) {
 		map2[x][y + 1] = 1;
-		DFSMap(x, y + 1, map1, map2);
+		if(map1[x][y+1] == 0)
+			DFSMap(x, y + 1, map1, map2);
 	}
 }
 
